@@ -1,0 +1,193 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global Styles */
+:root {
+  --primary-color: #3b82f6; /* Vibrant Blue */
+  --secondary-color: #1d4ed8; /* Darker Blue */
+  --accent-color: #f0f9ff; /* Light Blue Background */
+  --gray-color: #6b7280; /* Neutral Gray */
+  --white-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Light shadow */
+  --font-main: 'Poppins', sans-serif; /* Change to modern Poppins */
+  --background-image: url('./assets/1902577bd537af191c4fb74bf78af80d.jpg'); /* Insert a beautiful background image URL */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+    background-color: #f5f7fa; /* Fallback background color */
+    /*background-image: url('./assets/e931b043748ce035ccbde0273e5ca3dd.jpg'); /* Replace with your image URL */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+h1 {
+  background-color: var(--primary-color);
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px 0;
+  color: var(--white-color);
+  margin-bottom: 30px;
+  box-shadow: 0px 4px 8px var(--shadow-color); /* Add shadow */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  padding: 30px;
+}
+
+.weather-input {
+  flex: 1;
+  max-width: 550px;
+}
+
+.weather-input input {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1.1rem;
+  padding: 0 20px;
+  margin: 10px 0 20px 0;
+  border-radius: 10px; /* More rounded corners */
+  border: none; /* Remove border */
+  box-shadow: 0 4px 8px var(--shadow-color); /* Shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-input input:focus {
+  transform: scale(1.03); /* Slight zoom on focus */
+}
+
+.weather-input button {
+  width: 100%;
+  padding: 15px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px var(--shadow-color); /* Button shadow */
+}
+
+.weather-input button:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0px 6px 12px var(--shadow-color); /* Darker shadow on hover */
+}
+
+.weather-data {
+  flex: 2;
+  max-width: 100%;
+}
+
+.weather-data .current-weather {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 6px 12px var(--shadow-color); /* Card shadow */
+}
+
+.current-weather h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.current-weather .icon {
+  text-align: center;
+}
+
+.current-weather .icon img {
+  max-width: 120px;
+}
+
+.current-weather .icon h6 {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+/* Forecast Cards */
+.days-forecast h2 {
+  font-size: 1.6rem;
+  margin: 25px 0;
+  color: var(--primary-color); /* Add color */
+}
+
+.days-forecast .weather-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.weather-cards .card {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px var(--shadow-color); /* Card shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-cards .card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 6px 12px var(--shadow-color); /* Deeper shadow on hover */
+}
+
+.weather-cards .card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.weather-cards .card img {
+  max-width: 70px;
+  margin: 10px 0;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .weather-input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 950px) {
+  .weather-data .current-weather {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .weather-input input {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  h1 {
+    font-size: 1.6rem;
+    padding: 16px 0;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .days-forecast h2 {
+    font-size: 1.4rem;
+  }
+}
